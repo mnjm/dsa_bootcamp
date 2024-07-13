@@ -1,16 +1,18 @@
+template<typename T>
 struct LLNode {
-    int val;
+    T val;
     LLNode* next;
 };
 
+template<typename T>
 class Queue
 {
 private:
-    LLNode* head;
-    LLNode* tail;
+    LLNode<T>* head;
+    LLNode<T>* tail;
     unsigned int len;
 public:
     Queue();
-    void enqueue(int val);
-    bool dequeue(int* ret);
+    void enqueue(const T& val);
+    bool dequeue(T* ret);
 };

@@ -1,12 +1,14 @@
 #include "LLQueue.hpp"
 
-Queue::Queue() {
+template<typename T>
+Queue<T>::Queue() {
     len = 0;
     head = tail = nullptr;
 }
 
-void Queue::enqueue(int val) {
-    LLNode* node = new LLNode();
+template<typename T>
+void Queue<T>::enqueue(const T& val) {
+    LLNode<T>* node = new LLNode<T>();
     node->val = val;
     node->next = nullptr;
     if (head == nullptr) {
@@ -19,13 +21,14 @@ void Queue::enqueue(int val) {
     return;
 }
 
-bool Queue::dequeue(int* ret) {
+template<typename T>
+bool Queue<T>::dequeue(T* ret) {
     if (head == nullptr) {
         *ret = -1;
         return false;
     }
     *ret = head->val;
-    LLNode* prev_head = head;
+    LLNode<T>* prev_head = head;
     head = head->next;
     delete prev_head;
     --len;

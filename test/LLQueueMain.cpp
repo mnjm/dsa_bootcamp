@@ -5,7 +5,7 @@ using namespace std;
 
 int main(int arc, char** argv)
 {
-    Queue q;
+    Queue<int> q;
     int temp_val;
     bool ret_status;
 
