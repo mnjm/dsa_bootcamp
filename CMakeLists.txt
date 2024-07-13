@@ -12,19 +12,23 @@ set(INCS
     inc/
 )
 
-# LLQueue
-set(LLQUEUE_SRCS
-    test/LLQueueMain.cpp
+# Queue
+set(QUEUE_SRCS
+    src/LinkedList.cpp
+    src/Queue.cpp
+    test/QueueMain.cpp
 )
-add_executable(LLQueue ${LLQUEUE_SRCS})
-target_include_directories(LLQueue PRIVATE ${INCS})
+add_executable(Queue ${QUEUE_SRCS})
+target_include_directories(Queue PRIVATE ${INCS})
 
-# LLStack
-set(LLSTACK_SRCS
-    test/LLStackMain.cpp
+# Stack
+set(STACK_SRCS
+    src/LinkedList.cpp
+    src/Stack.cpp
+    test/StackMain.cpp
 )
-add_executable(LLStack ${LLSTACK_SRCS})
-target_include_directories(LLStack PRIVATE ${INCS})
+add_executable(Stack ${STACK_SRCS})
+target_include_directories(Stack PRIVATE ${INCS})
 
 # MazeSolver
 set(MAZESOLVER_SRCS

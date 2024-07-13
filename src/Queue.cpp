@@ -1,8 +1,7 @@
-#include "LLQueue.hpp"
+#include "Queue.hpp"
 
-template<typename T>
-void Queue<T>::enqueue(const T& val) {
-    LLNode<T>* node = new LLNode<T>(val);
+void Queue::enqueue(int val) {
+    LLNode* node = new LLNode(val);
     node->next = nullptr;
     if (head == nullptr) {
         head = tail = node;
@@ -14,16 +13,19 @@ void Queue<T>::enqueue(const T& val) {
     return;
 }
 
-template<typename T>
-bool Queue<T>::dequeue(T* ret) {
+bool Queue::dequeue(int* ret) {
     if (head == nullptr) {
         *ret = -1;
         return false;
     }
     *ret = head->val;
-    LLNode<T>* prev_head = head;
+    LLNode* prev_head = head;
     head = head->next;
     delete prev_head;
     --len;
     return true;
+}
+
+void Queue::print() {
+   print_linked_list(head);
 }
