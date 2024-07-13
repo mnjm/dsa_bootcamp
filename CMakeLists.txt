@@ -34,3 +34,11 @@ set(MAZESOLVER_SRCS
 )
 add_executable(MazeSolver ${MAZESOLVER_SRCS})
 target_include_directories(MazeSolver PRIVATE ${INCS})
+
+# QuickSort
+set(QUICKSORT_SRCS
+    src/QuickSort.cpp
+    test/QuickSortMain.cpp
+)
+add_executable(QuickSort ${QUICKSORT_SRCS})
+target_include_directories(QuickSort PRIVATE ${INCS})
