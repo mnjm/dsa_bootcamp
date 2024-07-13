@@ -38,7 +38,6 @@ void Queue<T>::enqueue(const T& val) {
 template<typename T>
 bool Queue<T>::dequeue(T* ret) {
     if (head == nullptr) {
-        *ret = -1;
         return false;
     }
     *ret = head->val;
