@@ -1,20 +1,7 @@
 #include "DepthFirstTraversal.hpp"
+#include "BinaryTree.hpp"
 
 void pre_order_traversal(BinaryTreeNode* node, Vector& ret) {
-    // base
-    if (nullptr == node) {
-        return;
-    }
-
-    // recurse
-    pre_order_traversal(node->left, ret);
-    pre_order_traversal(node->right, ret);
-
-    // post
-    ret.push_back(node->val);
-}
-
-void post_order_traversal(BinaryTreeNode* node, Vector& ret){
     // base
     if (nullptr == node) {
         return;
@@ -24,9 +11,22 @@ void post_order_traversal(BinaryTreeNode* node, Vector& ret){
     ret.push_back(node->val);
 
     // recurse
+    pre_order_traversal(node->left, ret);
+    pre_order_traversal(node->right, ret);
+}
+
+void post_order_traversal(BinaryTreeNode* node, Vector& ret){
+    // base
+    if (nullptr == node) {
+        return;
+    }
+
+    // recurse
     post_order_traversal(node->left, ret);
     post_order_traversal(node->right, ret);
 
+    // post
+    ret.push_back(node->val);
 }
 
 void in_order_traversal(BinaryTreeNode* node, Vector& ret){
