@@ -22,7 +22,6 @@ target_include_directories(LLQueue PRIVATE ${INCS})
 
 # LLStack
 set(LLSTACK_SRCS
-    src/LLStack.cpp
     test/LLStackMain.cpp
 )
 add_executable(LLStack ${LLSTACK_SRCS})

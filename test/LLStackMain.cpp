@@ -3,7 +3,7 @@
 
 int main(int arc, char** argv)
 {
-    Stack stack;
+    Stack<int> stack;
     int temp_val;
     bool ret_status;
 
@@ -16,7 +16,11 @@ int main(int arc, char** argv)
     }
     for (int i=0; i < 5; ++i) {
         ret_status = stack.pop(&temp_val);
-        std::cout << "Pop " << ret_status << " " << temp_val << std::endl;
+        if (ret_status) {
+            std::cout << "Pop " << temp_val << std::endl;
+        } else {
+            std::cout << "Pop failed" << std::endl;
+        }
     }
     for(int i=0; i < 7; ++i) {
         stack.push(i);
@@ -24,7 +28,11 @@ int main(int arc, char** argv)
     }
     for (int i=0; i < 15; ++i) {
         ret_status = stack.pop(&temp_val);
-        std::cout << "Pop " << ret_status << " " << temp_val << std::endl;
+        if (ret_status) {
+            std::cout << "Pop " << temp_val << std::endl;
+        } else {
+            std::cout << "Pop failed" << std::endl;
+        }
     }
 
     return 0;
