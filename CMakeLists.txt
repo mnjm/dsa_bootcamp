@@ -42,3 +42,11 @@ set(QUICKSORT_SRCS
 )
 add_executable(QuickSort ${QUICKSORT_SRCS})
 target_include_directories(QuickSort PRIVATE ${INCS})
+
+# DepthFirstTraversal
+set(DEPTHFIRST_SRCS
+    src/DepthFirstTraversal.cpp
+    test/DepthFirstSearchTraversalMain.cpp
+)
+add_executable(Depth ${DEPTHFIRST_SRCS})
+target_include_directories(Depth PRIVATE ${INCS})
