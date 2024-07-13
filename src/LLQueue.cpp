@@ -1,15 +1,8 @@
 #include "LLQueue.hpp"
 
 template<typename T>
-Queue<T>::Queue() {
-    len = 0;
-    head = tail = nullptr;
-}
-
-template<typename T>
 void Queue<T>::enqueue(const T& val) {
-    LLNode<T>* node = new LLNode<T>();
-    node->val = val;
+    LLNode<T>* node = new LLNode<T>(val);
     node->next = nullptr;
     if (head == nullptr) {
         head = tail = node;

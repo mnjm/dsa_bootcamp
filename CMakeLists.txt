@@ -14,7 +14,6 @@ set(INCS
 
 # LLQueue
 set(LLQUEUE_SRCS
-    src/LLQueue.cpp
     test/LLQueueMain.cpp
 )
 add_executable(LLQueue ${LLQUEUE_SRCS})
