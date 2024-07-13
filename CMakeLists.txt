@@ -8,14 +8,22 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+set(INCS
+    inc/
+)
+
 # LLQueue
 set(LLQUEUE_SRCS
     src/LLQueue.cpp
     test/LLQueueMain.cpp
 )
-set(LLQUEUE_INCS
-    inc/
-)
-
 add_executable(LLQueue ${LLQUEUE_SRCS})
-target_include_directories(LLQueue PRIVATE ${LLQUEUE_INCS})
+target_include_directories(LLQueue PRIVATE ${INCS})
+
+# LLStack
+set(LLSTACK_SRCS
+    src/LLStack.cpp
+    test/LLStackMain.cpp
+)
+add_executable(LLStack ${LLSTACK_SRCS})
+target_include_directories(LLStack PRIVATE ${INCS})
