@@ -25,3 +25,12 @@ set(LLSTACK_SRCS
 )
 add_executable(LLStack ${LLSTACK_SRCS})
 target_include_directories(LLStack PRIVATE ${INCS})
+
+# MazeSolver
+set(MAZESOLVER_SRCS
+    src/Maze.cpp
+    src/MazeSolver.cpp
+    test/MazeSolverMain.cpp
+)
+add_executable(MazeSolver ${MAZESOLVER_SRCS})
+target_include_directories(MazeSolver PRIVATE ${INCS})
