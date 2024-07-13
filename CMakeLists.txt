@@ -54,3 +54,10 @@ set(DEPTHFIRST_SRCS
 )
 add_executable(Depth ${DEPTHFIRST_SRCS})
 target_include_directories(Depth PRIVATE ${INCS})
+
+set(BREADTHFRIST_SRCS
+    src/BreadthFirstTraversal.cpp
+    test/BreadthFirstSearchTraversalMain.cpp
+)
+add_executable(Breadth ${BREADTHFRIST_SRCS})
+target_include_directories(Breadth PRIVATE ${INCS})
