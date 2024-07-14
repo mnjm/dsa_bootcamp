@@ -1,43 +1,68 @@
 #include "DepthFirstTraversal.hpp"
 #include "BinaryTree.hpp"
+#include <stack>
 
-void pre_order_traversal(BinaryTreeNode* node, Vector& ret) {
-    // base
-    if (nullptr == node) {
-        return;
+void pre_order_traversal(BinaryTreeNode* root, Vector& ret) {
+    std::stack<BinaryTreeNode*> s;
+    BinaryTreeNode* node;
+
+    s.push(root);
+    while(false == s.empty()) {
+        node = s.top();
+        s.pop();
+        if (nullptr == node) {
+            continue;
+        }
+        ret.push_back(node->val);
+        s.push(node->right);
+        s.push(node->left);
     }
-
-    // pre
-    ret.push_back(node->val);
-
-    // recurse
-    pre_order_traversal(node->left, ret);
-    pre_order_traversal(node->right, ret);
 }
 
-void post_order_traversal(BinaryTreeNode* node, Vector& ret){
-    // base
-    if (nullptr == node) {
-        return;
+void post_order_traversal(BinaryTreeNode* root, Vector& ret){
+    std::stack<BinaryTreeNode*> s;
+    BinaryTreeNode* node = root;
+    BinaryTreeNode* prev_node = nullptr;
+    BinaryTreeNode* peek_node;
+
+    while (nullptr != node || false == s.empty()) {
+        /*go to the left leaf node*/
+        if (nullptr != node) {
+            s.push(node);
+            node = node->left;
+        }
+        else {
+            peek_node = s.top();
+            /* consider right sub tree */
+            if (nullptr != peek_node->right && prev_node != peek_node->right) {
+                node = peek_node->right;
+            }
+            else {
+                ret.push_back(peek_node->val);
+                prev_node = peek_node;
+                s.pop();
+            }
+        }
     }
-
-    // recurse
-    post_order_traversal(node->left, ret);
-    post_order_traversal(node->right, ret);
-
-    // post
-    ret.push_back(node->val);
 }
+void in_order_traversal(BinaryTreeNode* root, Vector& ret){
+    std::stack<BinaryTreeNode*> s;
+    BinaryTreeNode* node = root;
+    BinaryTreeNode* peek_node;
 
-void in_order_traversal(BinaryTreeNode* node, Vector& ret){
-    // base
-    if (nullptr == node) {
-        return;
+    while (nullptr != node || false == s.empty()) {
+        /*go to the left leaf node*/
+        if (nullptr != node) {
+            s.push(node);
+            node = node->left;
+        }
+        else {
+            peek_node = s.top();
+            s.pop();
+            ret.push_back(peek_node->val);
+            if (nullptr != peek_node->right) {
+                node = peek_node->right;
+            }
+        }
     }
-
-    // recurse
-    post_order_traversal(node->left, ret);
-    ret.push_back(node->val);
-    post_order_traversal(node->right, ret);
-
 }
