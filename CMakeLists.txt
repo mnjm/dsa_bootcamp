@@ -52,6 +52,7 @@ target_include_directories(QuickSort PRIVATE ${INCS})
 
 # DepthFirstTraversal
 set(DEPTHFIRST_SRCS
+    src/BinaryTree.cpp
     src/DepthFirstTraversal.cpp
     test/DepthFirstSearchTraversalMain.cpp
 )
@@ -59,6 +60,7 @@ add_executable(Depth ${DEPTHFIRST_SRCS})
 target_include_directories(Depth PRIVATE ${INCS})
 
 set(BREADTHFRIST_SRCS
+    src/BinaryTree.cpp
     src/BreadthFirstTraversal.cpp
     test/BreadthFirstSearchTraversalMain.cpp
 )

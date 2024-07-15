@@ -46,12 +46,15 @@ int main (int argc, char *argv[]) {
     BinaryTreeNode* example3 = createBinaryTree3();
 
     std::cout << "Example 1" << std::endl;
+    display_tree(example1);
     Vector ret1 = breadth_first_traversal(example1);
     print_vector(ret1);
     std::cout << "Example 2" << std::endl;
+    display_tree(example2);
     Vector ret2 = breadth_first_traversal(example2);
     print_vector(ret2);
     std::cout << "Example 3" << std::endl;
+    display_tree(example3);
     Vector ret3 = breadth_first_traversal(example3);
     print_vector(ret3);
 

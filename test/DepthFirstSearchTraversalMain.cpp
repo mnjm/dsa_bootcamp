@@ -1,3 +1,4 @@
+#include "BinaryTree.hpp"
 #include "DepthFirstTraversal.hpp"
 #include <iostream>
 
@@ -42,6 +43,7 @@ void print_vector(Vector vec) {
 void test_traversal(BinaryTreeNode* root) {
     Vector preorder, inorder, postorder;
 
+    display_tree(root);
     pre_order_traversal(root, preorder);
     in_order_traversal(root, inorder);
     post_order_traversal(root, postorder);

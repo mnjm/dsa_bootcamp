@@ -9,4 +9,6 @@ struct BinaryTreeNode {
     BinaryTreeNode(int _val) : val(_val), left(nullptr), right(nullptr) {}
 };
 
+void display_tree(BinaryTreeNode*);
+
 #endif
